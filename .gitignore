@@ -4,3 +4,6 @@
 *.DS_Store
 #added plugin
 Plugged
+#netwhitelist should be define according to enviroment 
+.netrwhist
+
