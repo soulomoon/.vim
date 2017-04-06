@@ -3,14 +3,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-
 Plug 'python-mode/python-mode'
-
 Plug 'vim-scripts/indentpython.vim'
-
 Plug 'tmhedberg/SimpylFold'
+Plug 'skywind3000/asyncrun.vim'
 
 " Make sure you use single quotes
 

@@ -12,4 +12,14 @@ set expandtab
 set wildmenu
 set wildmode=longest:full,full
 
+" set enable AsyncRun to access zshrc
+set shellcmdflag=-ci
+
+"enable airline to show status
+set laststatus=2
+"Eliminating delays on ESC
+set timeoutlen=1000 ttimeoutlen=0
+set splitbelow
+set splitright
+
 
