@@ -1,0 +1,6 @@
+#swap file
+*.swp
+#mac os file system
+*.DS_Store
+#added plugin
+Plugged
