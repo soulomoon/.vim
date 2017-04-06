@@ -3,7 +3,7 @@
 #mac os file system
 *.DS_Store
 #added plugin
-Plugged
+[pP]lugged
 #netwhitelist should be define according to enviroment 
 .netrwhist
 
