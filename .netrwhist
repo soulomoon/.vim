@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/soulomoon/.vim/myplugin'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/soulomoon/git/tool/shadowsocks/logs'
+let g:netrw_dirhist_2='/Users/soulomoon/git/tool/shadowsocks'
+let g:netrw_dirhist_3='/Users/soulomoon/git/tool/shadowsocks/logs'
+let g:netrw_dirhist_4='/Users/soulomoon/git/tool/shadowsocks'
+let g:netrw_dirhist_5='/Users/soulomoon/git/tool/shadowsocks/logs'
+let g:netrw_dirhist_6='/Users/soulomoon/git/tool/shadowsocks'
+let g:netrw_dirhist_7='/Users/soulomoon/git/tool/shadowsocks/logs'
+let g:netrw_dirhist_8='/Users/soulomoon/.vim/myplugin'

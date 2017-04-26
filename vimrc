@@ -8,3 +8,5 @@ let g:airline#extensions#tabline#enabled = 1
 
 "let g:pymode_python = 'python3'
 let g:pymode_rope_completion = 0
+"open jsx for js file
+let g:jsx_ext_required = 0

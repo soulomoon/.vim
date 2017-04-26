@@ -1,12 +1,10 @@
 set showcmd
+set hlsearch
 filetype plugin indent on
-
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
 " On pressing tab, insert 4 spaces
-set expandtab
+"set expandtab
+set ts=2 sts=2 sw=2
+autocmd Filetype javascript.jsx setlocal ts=2 sts=2 sw=2
 
 " list completion options
 set wildmenu
@@ -22,4 +20,10 @@ set timeoutlen=1000 ttimeoutlen=0
 set splitbelow
 set splitright
 
-
+"line Number
+set number
+"story command history
+set lines=75
+set history=1000
+"reflash edit
+set autoread

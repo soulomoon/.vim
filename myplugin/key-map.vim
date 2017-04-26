@@ -9,3 +9,5 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" highlight helper <F8>
+:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
