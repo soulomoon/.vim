@@ -10,4 +10,5 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <space> za
 
 " highlight helper <F8>
-:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap <C-F> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+

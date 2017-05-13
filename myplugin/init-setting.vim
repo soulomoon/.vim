@@ -2,19 +2,14 @@ set showcmd
 set hlsearch
 filetype plugin indent on
 " On pressing tab, insert 4 spaces
-"set expandtab
-set ts=2 sts=2 sw=2
+set expandtab
+set ts=4 sts=4 sw=4
 autocmd Filetype javascript.jsx setlocal ts=2 sts=2 sw=2
 
 " list completion options
 set wildmenu
 set wildmode=longest:full,full
 
-" set enable AsyncRun to access zshrc
-set shellcmdflag=-ci
-
-"enable airline to show status
-set laststatus=2
 "Eliminating delays on ESC
 set timeoutlen=1000 ttimeoutlen=0
 set splitbelow
@@ -25,5 +20,10 @@ set number
 "story command history
 set lines=75
 set history=1000
-"reflash edit
+"reflesh edit
 set autoread
+
+"syntax enable
+"set nolazyredraw
+
+set t_Co=256
