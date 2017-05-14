@@ -24,7 +24,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
+Plug 'junegunn/fzf.vim'
 " Unmanaged plugin (manually installed and updated)
 "Plug '~/my-prototype-plugin'
 
@@ -36,13 +36,13 @@ call plug#end()
 "airline configuration#######################################################
 let g:airline_theme = "jellybeans"
 let g:airline_detect_modified=1
-let g:airline_left_sep='>'
-let g:airline_right_sep='<'
+"let g:airline_left_sep='>'
+"let g:airline_right_sep='<'
 let g:airline_detect_spell=1
 let g:airline_inactive_collapse=1
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
-set ambiwidth=double
+"set ambiwidth=double
 set noshowmode
 let g:bufferline_echo = 0
 let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
@@ -69,4 +69,4 @@ let g:pymode_rope_completion = 0
 "set shellcmdflag=-ci
 
 "vflazz/vim-colorscheme ###########################################
-colorscheme Monokai
+"colorscheme Monokai
