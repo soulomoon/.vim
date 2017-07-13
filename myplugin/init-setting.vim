@@ -20,8 +20,6 @@ set splitright
 set number
 
 "story command history
-"bug when set lines
-"set lines=75
 set history=10000
 
 "syntax enable
