@@ -50,10 +50,10 @@ let g:bufferline_echo = 0
 let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-"let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = 1
 
 "autodeletbuffer from airline
-"autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
+autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 "augroup QuickfixStatus
 "  au! BufWinEnter quickfix setlocal
