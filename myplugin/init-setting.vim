@@ -25,6 +25,15 @@ set history=10000
 "syntax enable
 set nolazyredraw
 set t_Co=256
-"
+
 "ignore file in nerdtree
 let NERDTreeIgnore = ['.pyc$']
+
+"open NERDTree if not file
+function! StartUp()
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()

@@ -81,7 +81,7 @@ let g:pymode_breakpoint = 1
 "set shellcmdflag=-ci
 
 "vflazz/vim-colorscheme ###########################################
-"colorscheme Monokai
+colorscheme monokai-chris 
 "joonty/vdebug'#####################################################
     let g:vdebug_options= {
     \    "port" : 9000,
