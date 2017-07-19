@@ -8,4 +8,5 @@
 .netrwhist
 #vscode
 .vscode/
-
+#log
+*.log
