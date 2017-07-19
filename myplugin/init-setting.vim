@@ -1,7 +1,8 @@
 set showcmd
-set cmdheight=1
 set hlsearch
+set cmdheight=1
 filetype plugin indent on
+syntax on
 "On pressing tab, insert 4 spaces
 set expandtab
 set ts=4 sts=4 sw=4
@@ -12,7 +13,7 @@ set wildmenu
 set wildmode=longest:full,full
 
 "Eliminating delays on ESC
-set timeoutlen=10 ttimeoutlen=0
+"set timeoutlen=10 ttimeoutlen=0
 set splitbelow
 set splitright
 
@@ -26,14 +27,3 @@ set history=10000
 set nolazyredraw
 set t_Co=256
 
-"ignore file in nerdtree
-let NERDTreeIgnore = ['.pyc$']
-
-"open NERDTree if not file
-function! StartUp()
-    if 0 == argc()
-        NERDTree
-    end
-endfunction
-
-autocmd VimEnter * call StartUp()

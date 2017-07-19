@@ -4,6 +4,8 @@
 *.DS_Store
 #added plugin
 [pP]lugged
-#netwhitelist should be define according to enviroment 
+#netwhitelist should be define according to enviroment
 .netrwhist
+#vscode
+.vscode/
 
