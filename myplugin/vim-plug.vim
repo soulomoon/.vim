@@ -1,35 +1,41 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
+"project and language
 Plug 'python-mode/python-mode'
 Plug 'jmcomets/vim-pony'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
-Plug 'tmhedberg/SimpylFold'
 "Plug 'mxw/vim-jsx'
 "Plug 'xolox/vim-easytags'
 
-"services ##############################
-Plug 'jiangmiao/auto-pairs'
-Plug 'skywind3000/asyncrun.vim'
+"utility
+Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+"services ##############################
+Plug 'jiangmiao/auto-pairs'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-sensible'
 
 "UI ##################################
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-obsession'
 Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sensible'
+
 " Initialize plugin system
 call plug#end()
+
+
 "airline configuration#######################################################
 "human readeable linesnumber
 function! MyLineNumber()
@@ -66,6 +72,8 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''''
 "autodeletbuffer from airline
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
+
+"tagebar ########################################################################
 nmap <F8> :TagbarToggle<CR>
 
 
@@ -73,7 +81,7 @@ nmap <F8> :TagbarToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | exec 'NERDTree' | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 augroup QuickfixStatus
@@ -81,21 +89,22 @@ augroup QuickfixStatus
                 \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
 augroup END
 
+
 "simple fold#######################################################################
 let g:SimpylFold_docstring_preview = 1
 
-"pymode ############################################################
 
+"pymode ############################################################
 "let g:UltiSnipsUsePythonVersion = 3
 "let g:pymode_python = 'python3'
-"let g:pymode_virtualenv = 1
-""let g:pymode_folding = 1
+let g:pymode_virtualenv = 1
+let g:pymode_folding = 1
 let g:pymode_run = 1
-let g:pymode_run_bind = '<F5>'
-"let g:pymode_breakpoint = 1
+let g:pymode_run_bind = '<leader>r'
+let g:pymode_breakpoint = 1
 ""rope
 "let g:pymode_rope_goto_definition_bind = '<C-c>g'
-"let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_rope_goto_definition_cmd = 'e'
 "let g:pymode_rope_show_doc_bind = '<C-c>d'
 "let g:pymode_rope = 1
 "let g:pymode_rope_autoimport=1
