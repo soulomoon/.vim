@@ -33,6 +33,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'edkolev/tmuxline.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Initialize plugin system
 call plug#end()
@@ -45,6 +48,7 @@ function! MyLineNumber()
     \    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
 endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
+
 "windowsNumber
 function! WindowNumber(...)
     let builder = a:1
@@ -52,7 +56,6 @@ function! WindowNumber(...)
     call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
     return 0
 endfunction
-
 call airline#add_statusline_func('WindowNumber')
 call airline#add_inactive_statusline_func('WindowNumber')
 
@@ -79,7 +82,7 @@ autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 nmap <F8> :TagbarToggle<CR>
 
 
-"NerdTree ####################################################################################
+"nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$']
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
@@ -158,5 +161,5 @@ nmap ga <Plug>(EasyAlign)
 "enable quickfix to get all output
 autocmd BufEnter * set errorformat&
 
-# fugitive
+" fugitive
 autocmd QuickFixCmdPost *grep* cwindow
