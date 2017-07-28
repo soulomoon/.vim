@@ -3,12 +3,13 @@ set hlsearch
 set cmdheight=1
 filetype plugin indent on
 syntax on
+
 "On pressing tab, insert 4 spaces
 set expandtab
 set ts=4 sts=4 sw=4
 
 "javascript set 2 as indent
-autocmd Filetype javascript.jsx setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript.jsx.html setlocal ts=2 sts=2 sw=2
 
 "list completion options
 set wildmenu
@@ -28,3 +29,6 @@ set history=10000
 "syntax enable
 set nolazyredraw
 set t_Co=256
+
+"auto reload file
+set autoread
