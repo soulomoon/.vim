@@ -164,3 +164,7 @@ autocmd BufEnter * set errorformat&
 
 " fugitive
 autocmd QuickFixCmdPost *grep* cwindow
+
+"Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_start_key='<F6>'
+let g:multi_cursor_next_key='<C-g>'
