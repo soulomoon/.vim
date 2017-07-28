@@ -37,6 +37,7 @@ Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 " Initialize plugin system
 call plug#end()
@@ -168,3 +169,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 "Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_start_key='<F6>'
 let g:multi_cursor_next_key='<C-g>'
+
+"airblade/vim-gitgutter
+"let g:gitgutter_realtime = 0
+"let g:gitgutter_eager = 0
