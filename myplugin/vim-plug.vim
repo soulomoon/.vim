@@ -155,3 +155,6 @@ nmap ga <Plug>(EasyAlign)
 
 "enable quickfix to get all output
 autocmd BufEnter * set errorformat&
+
+# fugitive
+autocmd QuickFixCmdPost *grep* cwindow
