@@ -29,6 +29,7 @@ Plug 'vim-syntastic/syntastic'
 
 "UI ##################################
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
