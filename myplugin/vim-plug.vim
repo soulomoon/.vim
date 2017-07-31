@@ -171,4 +171,4 @@ let g:multi_cursor_start_key='<F6>'
 let g:multi_cursor_next_key='<C-g>'
 
 "airblade/vim-gitgutter
-set GitGutterLineHighlightsEnable
+let g:gitgutter_highlight_lines = 1
