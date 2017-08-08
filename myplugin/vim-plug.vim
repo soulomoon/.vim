@@ -37,7 +37,7 @@ Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
 
 " Initialize plugin system
 call plug#end()
