@@ -38,6 +38,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 "Plug 'mhinz/vim-signify'
+Plug 'vim-scripts/django.vim'
 
 " Initialize plugin system
 call plug#end()
