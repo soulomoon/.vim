@@ -25,7 +25,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 
 "UI ##################################
 Plug 'scrooloose/nerdtree'
