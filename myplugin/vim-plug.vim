@@ -38,7 +38,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/django.vim'
@@ -102,6 +102,7 @@ augroup QuickfixStatus
                 \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
 augroup END
 
+let NERDTreeShowHidden=1
 
 "simple fold#######################################################################
 let g:SimpylFold_docstring_preview = 1
