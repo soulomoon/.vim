@@ -7,6 +7,8 @@ Plug 'jmcomets/vim-pony'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
 "Plug 'xolox/vim-easytags'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'moll/vim-node'
 
 "utility
 Plug 'tmhedberg/SimpylFold'
@@ -19,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'christoomey/vim-tmux-navigator'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
@@ -40,10 +43,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/django.vim'
 Plug 'tweekmonster/django-plus.vim'
-
+Plug 'ternjs/tern_for_vim'
 " Initialize plugin system
 call plug#end()
-
+"YCM
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 
 "airline configuration#######################################################
 "human readeable linesnumber

@@ -5,12 +5,10 @@ filetype plugin indent on
 syntax on
 
 "On pressing tab, insert 4 spaces
-set expandtab
-set ts=4 sts=4 sw=4
-
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
 "javascript set 2 as indent
 autocmd Filetype javascript.jsx.html setlocal ts=2 sts=2 sw=2
-
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 "list completion options
 set wildmenu
 set wildmode=longest:full,full
