@@ -44,10 +44,11 @@ Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/django.vim'
 Plug 'tweekmonster/django-plus.vim'
 Plug 'ternjs/tern_for_vim'
+Plug 'tmux-plugins/vim-tmux'
 " Initialize plugin system
 call plug#end()
 "YCM
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_python_binary_path = 'python'
 
 "airline configuration#######################################################
 "human readeable linesnumber
@@ -101,8 +102,6 @@ augroup QuickfixStatus
     au! BufWinEnter quickfix setlocal
                 \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
 augroup END
-
-let NERDTreeShowHidden=1
 
 "simple fold#######################################################################
 let g:SimpylFold_docstring_preview = 1
