@@ -9,6 +9,7 @@ Plug 'jmcomets/vim-pony'
 "Plug 'xolox/vim-easytags'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'moll/vim-node'
+Plug 'digitaltoad/vim-pug'
 
 "utility
 Plug 'tmhedberg/SimpylFold'
