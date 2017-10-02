@@ -46,6 +46,8 @@ Plug 'vim-scripts/django.vim'
 Plug 'tweekmonster/django-plus.vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'ryanoasis/vim-devicons'
+Plug 'mhinz/vim-startify'
 " Initialize plugin system
 call plug#end()
 "YCM

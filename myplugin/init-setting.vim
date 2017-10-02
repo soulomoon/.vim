@@ -1,4 +1,5 @@
 set showcmd
+set encoding=utf8
 set hlsearch
 set cmdheight=1
 filetype plugin indent on
