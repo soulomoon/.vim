@@ -29,7 +29,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
-"Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 "UI ##################################
 Plug 'scrooloose/nerdtree'
@@ -39,7 +39,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'edkolev/tmuxline.vim'
+Plug 'godlygeek/tabular'
+Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/django.vim'
@@ -95,7 +96,7 @@ nmap <F8> :TagbarToggle<CR>
 
 
 "nerdtree ####################################################################################
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
