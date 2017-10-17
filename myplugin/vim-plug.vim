@@ -14,7 +14,8 @@ Plug 'digitaltoad/vim-pug'
 "utility
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
-"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -48,11 +49,19 @@ Plug 'tweekmonster/django-plus.vim'
 Plug 'ternjs/tern_for_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'ryanoasis/vim-devicons'
+Plug 'heavenshell/vim-pydocstring'
 " Initialize plugin system
 call plug#end()
+"vim-pydocstring
+let g:pydocstring_enable_mapping = 0
+nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
 let g:ycm_python_binary_path = 'python'
-
+let g:ycm_use_ultisnips_completer = 1
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<cr>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "airline configuration#######################################################
 "human readeable linesnumber
 function! MyLineNumber()

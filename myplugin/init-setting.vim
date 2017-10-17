@@ -1,3 +1,4 @@
+set nocompatible 
 set showcmd
 set encoding=utf8
 set hlsearch
@@ -6,7 +7,7 @@ filetype plugin indent on
 syntax on
 set ts=4 sts=4 sw=4
 "On pressing tab, insert 4 spaces
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "javascript set 2 as indent
 autocmd Filetype javascript.jsx.html setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
