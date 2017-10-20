@@ -36,6 +36,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'flazz/vim-colorschemes'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
@@ -128,11 +129,7 @@ let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_breakpoint = 1
 ""rope
-"let g:pymode_rope_goto_definition_bind = '<C-c>g'
 let g:pymode_rope_goto_definition_cmd = 'e'
-"let g:pymode_rope_show_doc_bind = '<C-c>d'
-"let g:pymode_rope = 1
-"let g:pymode_rope_autoimport=1
 let g:pymode_rope_completion = 0
 "
 ""quick fix
@@ -151,8 +148,9 @@ let g:pymode_syntax = 1
 "set shellcmdflag=-ci
 
 "vflazz/vim-colorscheme ###########################################
+"set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
-
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
