@@ -93,7 +93,7 @@ set laststatus=2
 set noshowmode
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+"let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 let g:airline_skip_empty_sections = 1
 " extention --------------
 let g:airline#extensions#tagbar#enabled = 1
