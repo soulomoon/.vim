@@ -2,14 +2,18 @@
 call plug#begin('~/.vim/plugged')
 "project and language
 Plug 'python-mode/python-mode'
-Plug 'jmcomets/vim-pony'
+Plug 'pangloss/vim-javascript'
+Plug 'digitaltoad/vim-pug'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
 "Plug 'xolox/vim-easytags'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'moll/vim-node'
-Plug 'digitaltoad/vim-pug'
+"Plug 'jelera/vim-javascript-syntax'
+"Plug 'moll/vim-node'
+"""django
+"Plug 'jmcomets/vim-pony'
+"Plug 'vim-scripts/django.vim'
+"Plug 'tweekmonster/django-plus.vim'
 
 "utility
 Plug 'tmhedberg/SimpylFold'
@@ -27,7 +31,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
-Plug 'skywind3000/asyncrun.vim'
+"Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
 Plug 'vim-syntastic/syntastic'
@@ -45,8 +49,7 @@ Plug 'godlygeek/tabular'
 "Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
-Plug 'vim-scripts/django.vim'
-Plug 'tweekmonster/django-plus.vim'
+
 Plug 'ternjs/tern_for_vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'ryanoasis/vim-devicons'
@@ -110,15 +113,10 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-let g:NERDTreeChDirMode = 2
-augroup QuickfixStatus
-    au! BufWinEnter quickfix setlocal
-                \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
-augroup END
+let g:NERDTreeChDirMode = 0
 
 "simple fold#######################################################################
 let g:SimpylFold_docstring_preview = 1
-
 
 "pymode ############################################################
 "let g:UltiSnipsUsePythonVersion = 3
@@ -142,11 +140,6 @@ let g:pymode_syntax_slow_sync = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax = 1
 
-"AsyncRun ########################################################
-" set enable AsyncRun to access zshrc
-"Bug by setting shell to zsh vim-fugitive would hangs, diable it
-"set shellcmdflag=-ci
-
 "vflazz/vim-colorscheme ###########################################
 set background=dark
 "let g:solarized_termtrans = 1
@@ -155,7 +148,6 @@ colorscheme solarized
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
@@ -176,9 +168,6 @@ nmap ga <Plug>(EasyAlign)
 "    \    "marker_closed_tree" : '▸',
 "    \    "marker_open_tree" : '▾'
 "    \}
-
-"enable quickfix to get all output
-autocmd BufEnter * set errorformat&
 
 " fugitive
 autocmd QuickFixCmdPost *grep* cwindow

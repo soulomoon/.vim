@@ -1,4 +1,4 @@
-set nocompatible 
+set nocompatible
 set showcmd
 set hlsearch
 set cmdheight=1
