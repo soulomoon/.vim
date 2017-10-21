@@ -62,6 +62,7 @@ nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
 let g:ycm_python_binary_path = 'python'
 let g:ycm_use_ultisnips_completer = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<cr>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
