@@ -1,10 +1,10 @@
 set nocompatible 
 set showcmd
-set encoding=utf8
 set hlsearch
 set cmdheight=1
 filetype plugin indent on
 syntax on
+set encoding=utf8
 set ts=4 sts=4 sw=4
 "On pressing tab, insert 4 spaces
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab

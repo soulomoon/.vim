@@ -42,7 +42,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'godlygeek/tabular'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'vim-scripts/django.vim'
@@ -72,14 +72,14 @@ endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
 "windowsNumber
-function! WindowNumber(...)
-    let builder = a:1
-    let context = a:2
-    call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
-    return 0
-endfunction
-call airline#add_statusline_func('WindowNumber')
-call airline#add_inactive_statusline_func('WindowNumber')
+"function! WindowNumber(...)
+"    let builder = a:1
+"    let context = a:2
+"    call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
+"    return 0
+"endfunction
+"call airline#add_statusline_func('WindowNumber')
+"call airline#add_inactive_statusline_func('WindowNumber')
 
 let g:airline_theme = "solarized"
 let g:airline_detect_modified=1
@@ -110,7 +110,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
+let g:NERDTreeChDirMode = 2
 augroup QuickfixStatus
     au! BufWinEnter quickfix setlocal
                 \ statusline=%t\ [%{g:asyncrun_status}]\ %{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
@@ -148,7 +148,8 @@ let g:pymode_syntax = 1
 "set shellcmdflag=-ci
 
 "vflazz/vim-colorscheme ###########################################
-"set background=dark
+set background=dark
+"let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
 colorscheme solarized
 " Easy align shortcut ########################################
@@ -188,3 +189,5 @@ let g:multi_cursor_next_key='<C-g>'
 
 "airblade/vim-gitgutter
 let g:gitgutter_highlight_lines = 1
+"tmuxline
+let g:tmuxline_powerline_separators = 0
