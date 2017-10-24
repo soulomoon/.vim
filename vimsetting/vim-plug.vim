@@ -1,9 +1,14 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
-"project and language
+"language syntax################################################################################
+" full function
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer --clang-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
 Plug 'pangloss/vim-javascript'
+Plug 'ternjs/tern_for_vim'
 Plug 'digitaltoad/vim-pug'
+Plug 'sheerun/vim-polyglot'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
@@ -14,55 +19,62 @@ Plug 'digitaltoad/vim-pug'
 "Plug 'jmcomets/vim-pony'
 "Plug 'vim-scripts/django.vim'
 "Plug 'tweekmonster/django-plus.vim'
+"themes######################################################################
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'joshdick/onedark.vim'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'chriskempson/base16-vim'
+"Plug 'rakr/vim-one'
+"Plug 'altercation/vim-colors-solarized'
 
-"utility
+"utility ############################################################
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'godlygeek/tabular'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
-"Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'skywind3000/asyncrun.vim'
 
-"UI ##################################
+"project ##################################o
+Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'flazz/vim-colorschemes'
-"Plug 'altercation/vim-colors-solarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'godlygeek/tabular'
-"Plug 'edkolev/tmuxline.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify'
-
-Plug 'ternjs/tern_for_vim'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'ryanoasis/vim-devicons'
 Plug 'heavenshell/vim-pydocstring'
+"Plug 'edkolev/tmuxline.vim'
+
+"git##########
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'mhinz/vim-signify'
+"tmux
+Plug 'tmux-plugins/vim-tmux'
+Plug 'christoomey/vim-tmux-navigator' 
+
 " Initialize plugin system
 call plug#end()
-"vim-pydocstring
 let g:pydocstring_enable_mapping = 0
 nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
 let g:ycm_python_binary_path = 'python'
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<cr>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -70,28 +82,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "airline configuration#######################################################
 "human readeable linesnumber
 function! MyLineNumber()
-  return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
-    \    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
+	return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
+				\    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
 endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
-"windowsNumber
-"function! WindowNumber(...)
-"    let builder = a:1
-"    let context = a:2
-"    call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
-"    return 0
-"endfunction
-"call airline#add_statusline_func('WindowNumber')
-"call airline#add_inactive_statusline_func('WindowNumber')
-
-let g:airline_theme = "solarized"
+let g:airline_theme = "onedark"
 let g:airline_detect_modified=1
 let g:airline_detect_spell=1
 let g:airline_inactive_collapse=1
 let g:airline_powerline_fonts = 1
-set laststatus=2
-set noshowmode
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
@@ -103,10 +103,8 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', ''''
 "autodeletbuffer from airline
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
-
 "tagebar ########################################################################
 nmap <F8> :TagbarToggle<CR>
-
 
 "nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
@@ -115,6 +113,14 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 let g:NERDTreeChDirMode = 0
+"vim-nerdtree-syntax-highlight'###########
+let g:NERDTreeLimitedSyntax = 1
+"let g:NERDTreeSyntaxDisableDefaultExtensions = 1
+"let g:NERDTreeDisableExactMatchHighlight = 1
+"let g:NERDTreeDisablePatternMatchHighlight = 1
+"let g:NERDTreeSyntaxEnabledExtensions = ['c', 'h', 'c++', 'php', 'rb', 'js', 'css'] " example
+"vim-pydocstring
+
 
 "simple fold#######################################################################
 let g:SimpylFold_docstring_preview = 1
@@ -142,33 +148,21 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax = 1
 
 "vflazz/vim-colorscheme ###########################################
-set background=dark
-"let g:solarized_termtrans = 1
 let g:solarized_termcolors=256
-colorscheme solarized
+let g:onedark_termcolors=256
+let base16colorspace=256
+let g:one_allow_italics = 1 " I love italic for comments
+let g:onedark_terminal_italics = 1
+
+set background=dark
+"colorscheme one
+colorscheme onedark
+"colorscheme base16-onedark 
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-"joonty/vdebug'#####################################################
-"    let g:vdebug_options= {
-"    \    "port" : 9000,
-"    \    "server" : 'localhost',
-"    \    "timeout" : 20,
-"    \    "on_close" : 'detach',
-"    \    "break_on_open" : 1,
-"    \    "ide_key" : '',
-"    \    "path_maps" : {},
-"    \    "debug_window_level" : 0,
-"    \    "debug_file_level" : 0,
-"    \    "debug_file" : "test.txt",
-"    \    "watch_window_style" : 'expanded',
-"    \    "marker_default" : '⬦',
-"    \    "marker_closed_tree" : '▸',
-"    \    "marker_open_tree" : '▾'
-"    \}
 
 " fugitive
 autocmd QuickFixCmdPost *grep* cwindow
@@ -178,6 +172,7 @@ let g:multi_cursor_start_key='<F6>'
 let g:multi_cursor_next_key='<C-g>'
 
 "airblade/vim-gitgutter
-let g:gitgutter_highlight_lines = 1
-"tmuxline
-let g:tmuxline_powerline_separators = 0
+"let g:gitgutter_highlight_lines = 1
+
+"ryanoasis/vim-devicons####################
+let g:WebDevIconsOS = 'Darwin'

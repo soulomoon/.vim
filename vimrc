@@ -1,5 +1,5 @@
-runtime myplugin/init-setting.vim
-runtime myplugin/service.vim
-runtime myplugin/key-map.vim
-runtime myplugin/vim-plug.vim
-"runtime myplugin/vim-plug-debug.vim
+runtime vimsetting/init-setting.vim
+runtime vimsetting/service.vim
+runtime vimsetting/key-map.vim
+runtime vimsetting/vim-plug.vim
+"runtime vimsetting/vim-plug-debug.vim

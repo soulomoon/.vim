@@ -2,6 +2,9 @@ set nocompatible
 set showcmd
 set hlsearch
 set cmdheight=1
+set updatetime=350
+set noshowmode
+
 filetype plugin indent on
 syntax on
 set encoding=utf8
