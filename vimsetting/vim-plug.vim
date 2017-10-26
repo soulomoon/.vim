@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+Plug 'heavenshell/vim-pydocstring'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
@@ -55,7 +56,6 @@ Plug 'w0rp/ale'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'heavenshell/vim-pydocstring'
 "Plug 'edkolev/tmuxline.vim'
 
 "git##########
