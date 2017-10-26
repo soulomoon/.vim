@@ -11,6 +11,9 @@ set wildmenu
 set wildmode=longest:full,full
 set splitbelow
 set splitright
+"case
+set ignorecase
+set smartcase
 "line Number
 set number
 "story command history

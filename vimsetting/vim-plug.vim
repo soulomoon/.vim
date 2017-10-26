@@ -64,7 +64,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'mhinz/vim-signify'
 "tmux
 Plug 'tmux-plugins/vim-tmux'
-Plug 'christoomey/vim-tmux-navigator' 
+Plug 'christoomey/vim-tmux-navigator'
 
 " Initialize plugin system
 call plug#end()
@@ -75,8 +75,8 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<cr>"
+" better key bindings for ultisnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "airline configuration#######################################################
@@ -154,10 +154,10 @@ let base16colorspace=256
 let g:one_allow_italics = 1 " I love italic for comments
 let g:onedark_terminal_italics = 1
 
-set background=dark
+"set background=dark
 "colorscheme one
 colorscheme onedark
-"colorscheme base16-onedark 
+"colorscheme base16-onedark
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
