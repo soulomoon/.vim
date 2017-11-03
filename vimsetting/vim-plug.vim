@@ -8,7 +8,7 @@ Plug 'python-mode/python-mode'
 Plug 'pangloss/vim-javascript'
 Plug 'ternjs/tern_for_vim'
 Plug 'digitaltoad/vim-pug'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
@@ -19,18 +19,7 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'jmcomets/vim-pony'
 "Plug 'vim-scripts/django.vim'
 "Plug 'tweekmonster/django-plus.vim'
-"themes######################################################################
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'joshdick/onedark.vim'
-"Plug 'flazz/vim-colorschemes'
-"Plug 'chriskempson/base16-vim'
-"Plug 'rakr/vim-one'
-"Plug 'altercation/vim-colors-solarized'
-
+"
 "utility ############################################################
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
@@ -41,8 +30,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
 Plug 'heavenshell/vim-pydocstring'
+Plug 'tweekmonster/startuptime.vim'
+"Plug 'godlygeek/tabular'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
@@ -66,8 +56,22 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
 
+"themes######################################################################
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'chriskempson/base16-vim'
+"Plug 'rakr/vim-one'
+"Plug 'altercation/vim-colors-solarized'
+
+
 " Initialize plugin system
 call plug#end()
+"Plug 'heavenshell/vim-pydocstring'
 let g:pydocstring_enable_mapping = 0
 nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
@@ -113,8 +117,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 let g:NERDTreeChDirMode = 0
+
 "vim-nerdtree-syntax-highlight'###########
-let g:NERDTreeLimitedSyntax = 1
+"let g:NERDTreeLimitedSyntax = 1
 "let g:NERDTreeSyntaxDisableDefaultExtensions = 1
 "let g:NERDTreeDisableExactMatchHighlight = 1
 "let g:NERDTreeDisablePatternMatchHighlight = 1
@@ -176,3 +181,11 @@ let g:multi_cursor_next_key='<C-g>'
 
 "ryanoasis/vim-devicons####################
 let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
