@@ -139,7 +139,9 @@ let g:pymode_run = 1
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_breakpoint = 1
 ""rope
+let g:pymode_rope = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_rope_goto_definition_bind =
 let g:pymode_rope_completion = 0
 "
 ""quick fix
