@@ -31,3 +31,6 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "javascript set 2 as indent
 autocmd Filetype javascript.jsx.html setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+
+autocmd BufNewFile,BufRead *.conf set syntax=make
+
