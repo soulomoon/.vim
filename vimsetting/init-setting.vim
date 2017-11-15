@@ -32,5 +32,7 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype javascript.jsx.html setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 
-autocmd BufNewFile,BufRead *.conf set syntax=make
-
+autocmd BufNewFile,BufRead *.conf set syntax=automake
+autocmd BufNewFile,BufRead *.automake set syntax=automake
+autocmd BufNewFile,BufRead *.am set syntax=automake
+autocmd BufNewFile,BufRead *.make set syntax=automake
