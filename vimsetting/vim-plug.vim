@@ -55,6 +55,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "tmux
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 
 "themes######################################################################
 Plug 'vim-airline/vim-airline'
@@ -185,6 +186,7 @@ let g:multi_cursor_next_key='<C-g>'
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:DevIconsEnableFoldersOpenClose = 1
