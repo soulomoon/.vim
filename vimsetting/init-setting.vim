@@ -12,7 +12,7 @@ set wildmode=longest:full,full
 set splitbelow
 set splitright
 "case
-set ignorecase
+"set ignorecase
 set smartcase
 "line Number
 set number
