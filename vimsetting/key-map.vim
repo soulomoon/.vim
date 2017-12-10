@@ -11,8 +11,8 @@ nnoremap <space> za
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Clear highlighting on escape in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
+"nnoremap <esc> :noh<return><esc>
+"nnoremap <esc>^[ <esc>^[
 
 "#####################################
 "#############VIMUX###################
