@@ -2,6 +2,7 @@ set nocompatible
 set showcmd
 set hlsearch
 set cmdheight=1
+set wrap
 "set updatetime=350
 set noshowmode
 set encoding=utf8
