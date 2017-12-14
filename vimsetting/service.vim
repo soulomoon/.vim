@@ -1,6 +1,10 @@
 "auto reload vimrc
-autocmd BufWritePost * VimuxInterruptRunner
-autocmd BufWritePost * VimuxRunLastCommand
+"autocmd BufWritePost * VimuxInterruptRunner
+"autocmd BufWritePost * VimuxRunLastCommand
+"
+function! autorunon()
+	autocmd BufWritePost * VimuxRunLastCommand
+endfunction
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
