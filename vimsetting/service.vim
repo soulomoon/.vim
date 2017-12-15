@@ -2,9 +2,13 @@
 "autocmd BufWritePost * VimuxInterruptRunner
 "autocmd BufWritePost * VimuxRunLastCommand
 "
-function! autorunon()
+"autorunning command
+augroup commandautorun
 	autocmd BufWritePost * VimuxRunLastCommand
-endfunction
+augroup END
+command Autorunon autocmd commandautorun
+command Autorunoff autocmd! commandautorun
+
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
