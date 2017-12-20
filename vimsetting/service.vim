@@ -8,6 +8,7 @@ augroup commandautorun
 augroup END
 command Autorunon autocmd commandautorun
 command Autorunoff autocmd! commandautorun
+Autorunoff
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
