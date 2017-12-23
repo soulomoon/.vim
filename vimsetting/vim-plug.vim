@@ -31,8 +31,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'heavenshell/vim-pydocstring'
-Plug 'tweekmonster/startuptime.vim'
-"Plug 'godlygeek/tabular'
+Plug 'tpope/vim-abolish'
+"Plug 'tweekmonster/startuptime.vim'
+Plug 'godlygeek/tabular'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
