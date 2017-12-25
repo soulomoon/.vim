@@ -3,8 +3,8 @@ set showcmd
 set hlsearch
 set cmdheight=1
 "soft wrap
-set wrap
-set linebreak
+set nowrap
+"set linebreak
 set nolist
 "set updatetime=350
 set noshowmode
