@@ -64,12 +64,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'
-"Plug 'rakr/vim-one'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 
 " Initialize plugin system
@@ -98,7 +99,7 @@ function! MyLineNumber()
 endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
-let g:airline_theme = "onedark"
+let g:airline_theme = "one"
 let g:airline_detect_modified=1
 let g:airline_detect_spell=1
 let g:airline_inactive_collapse=1
@@ -162,15 +163,16 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax = 1
 
 "vflazz/vim-colorscheme ###########################################
-let g:solarized_termcolors=256
-let g:onedark_termcolors=256
-let base16colorspace=256
-let g:one_allow_italics = 1 " I love italic for comments
-let g:onedark_terminal_italics = 1
+"let g:solarized_termcolors=256
+"let base16colorspace=256
 
-"set background=dark
+"one
+"let g:one_allow_italics = 1 " I love italic for comments
 "colorscheme one
-colorscheme onedark
+set background=light
+colorscheme solarized8
+"let g:onedark_termcolors=256
+"let g:onedark_terminal_italics = 1
 "colorscheme base16-onedark
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)

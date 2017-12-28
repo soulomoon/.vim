@@ -40,3 +40,5 @@ autocmd BufNewFile,BufRead *.conf set syntax=automake
 autocmd BufNewFile,BufRead *.automake set syntax=automake
 autocmd BufNewFile,BufRead *.am set syntax=automake
 autocmd BufNewFile,BufRead *.make set syntax=automake
+
+set termguicolors
