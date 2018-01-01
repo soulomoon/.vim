@@ -5,8 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
-Plug 'pangloss/vim-javascript'
-Plug 'ternjs/tern_for_vim'
+"Plug 'pangloss/vim-javascript'
+"Plug 'ternjs/tern_for_vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'sheerun/vim-polyglot'
 "Plug 'joonty/vdebug'
@@ -44,9 +44,9 @@ Plug 'w0rp/ale'
 "Plug 'skywind3000/asyncrun.vim'
 
 "project ##################################o
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 "Plug 'edkolev/tmuxline.vim'
 
 "git##########
@@ -63,13 +63,13 @@ Plug 'benmills/vimux'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
+"Plug 'joshdick/onedark.vim'
+"Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 
 
@@ -99,7 +99,7 @@ function! MyLineNumber()
 endfunction
 call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
-let g:airline_theme = "one"
+let g:airline_theme = "solarized"
 let g:airline_detect_modified=1
 let g:airline_detect_spell=1
 let g:airline_inactive_collapse=1
@@ -169,7 +169,7 @@ let g:pymode_syntax = 1
 "one
 "let g:one_allow_italics = 1 " I love italic for comments
 "colorscheme one
-set background=light
+execute "set background=".$BACKGROUND
 colorscheme solarized8
 "let g:onedark_termcolors=256
 "let g:onedark_terminal_italics = 1

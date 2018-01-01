@@ -1,14 +1,26 @@
-"auto reload vimrc
-"autocmd BufWritePost * VimuxInterruptRunner
-"autocmd BufWritePost * VimuxRunLastCommand
-"
 "autorunning command
-augroup commandautorun
-	autocmd BufWritePost * VimuxRunLastCommand
-augroup END
-command Autorunon autocmd commandautorun
-command Autorunoff autocmd! commandautorun
-Autorunoff
+let g:toggleAutoRun = 0
+function! AutoRunToggle(...)
+    if a:0 == 1
+        let g:toggleAutoRun = 1 - g:toggleAutoRun
+        if g:toggleAutoRun == 1
+            echo "autorun is on"
+        else
+            echo "autorun is off"
+        endif
+    else
+        if g:toggleAutoRun == 1
+            VimuxInterruptRunner
+            VimuxRunLastCommand
+        endif
+    endif
+endfunction
+
+autocmd BufWritePost * call AutoRunToggle()
+command ToggleAutorun call AutoRunToggle(1)
+
+command Dark set background=dark
+command Light set background=light
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
