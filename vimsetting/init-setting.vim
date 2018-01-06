@@ -1,3 +1,4 @@
+"set shell=bash\ -i
 set nocompatible
 set showcmd
 set hlsearch

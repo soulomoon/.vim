@@ -1,6 +1,7 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
 "language syntax################################################################################
+"Plug 'hdima/python-syntax'
 " full function
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer --clang-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -9,6 +10,8 @@ Plug 'python-mode/python-mode'
 "Plug 'ternjs/tern_for_vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'sheerun/vim-polyglot'
+Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
@@ -34,6 +37,7 @@ Plug 'heavenshell/vim-pydocstring'
 Plug 'tpope/vim-abolish'
 "Plug 'tweekmonster/startuptime.vim'
 Plug 'godlygeek/tabular'
+Plug 'terryma/vim-expand-region'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
@@ -66,7 +70,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
-Plug 'hdima/python-syntax'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'

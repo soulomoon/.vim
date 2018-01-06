@@ -17,10 +17,10 @@ function! AutoRunToggle(...)
 endfunction
 
 autocmd BufWritePost * call AutoRunToggle()
-command ToggleAutorun call AutoRunToggle(1)
+command! ToggleAutorun call AutoRunToggle(1)
 
-command Dark set background=dark
-command Light set background=light
+command! Dark set background=dark
+command! Light set background=light
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
