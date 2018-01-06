@@ -66,6 +66,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
+Plug 'hdima/python-syntax'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'
@@ -155,6 +156,7 @@ let g:pymode_breakpoint = 1
 let g:pymode_rope = 1
 let g:pymode_rope_goto_definition_cmd = 'e'
 let g:pymode_rope_completion = 0
+let g:pymode_options_max_line_length = 79
 "
 ""quick fix
 "let g:pymode_lint_cwindow = 1
