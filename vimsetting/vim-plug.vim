@@ -4,14 +4,14 @@ call plug#begin('~/.vim/plugged')
 "Plug 'hdima/python-syntax'
 " full function
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
-Plug 'digitaltoad/vim-pug'
-Plug 'sheerun/vim-polyglot'
+"Plug 'digitaltoad/vim-pug'
+"Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown'
 "Plug 'joonty/vdebug'
@@ -28,7 +28,7 @@ Plug 'suan/vim-instant-markdown'
 "utility ############################################################
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -36,14 +36,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'heavenshell/vim-pydocstring'
-Plug 'tpope/vim-abolish'
+"Plug 'tpope/vim-abolish'
 "Plug 'tweekmonster/startuptime.vim'
 Plug 'godlygeek/tabular'
-Plug 'terryma/vim-expand-region'
+"Plug 'terryma/vim-expand-region'
 
 "services ##############################
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-obsession'
+"Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
 "Plug 'vim-syntastic/syntastic'
@@ -68,7 +68,7 @@ Plug 'benmills/vimux'
 "themes######################################################################
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
@@ -88,14 +88,15 @@ let g:VimuxUseNearest = 0
 let g:pydocstring_enable_mapping = 0
 nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
-"let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python'
 "let g:ycm_complete_in_comments = 1
 " let g:ycm_use_ultisnips_completer = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " let g:ycm_add_preview_to_completeopt = 1
 " let g:ycm_autoclose_preview_window_after_completion = 0
-" let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
+let $PYTHONPATH .= getcwd()
 
 " better key bindings for ultisnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-l>"
@@ -103,11 +104,11 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "airline configuration#######################################################
 "human readeable linesnumber
-function! MyLineNumber()
-	return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
-				\    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
-endfunction
-call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
+"function! MyLineNumber()
+"	return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
+"				\    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
+"endfunction
+"call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
 let g:airline_theme = "solarized"
 let g:airline_detect_modified=1
@@ -121,12 +122,12 @@ let g:airline_skip_empty_sections = 1
 " extention --------------
 let g:airline#extensions#tagbar#enabled = 1
 "let g:airline_section_x = (tagbar, filetype, virtualenv)
-let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+"let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 "autodeletbuffer from airline
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 "tagebar ########################################################################
-nmap <F8> :TagbarToggle<CR>
+"nmap <F8> :TagbarToggle<CR>
 
 "nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
@@ -205,7 +206,6 @@ let g:multi_cursor_next_key='<C-g>'
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 let g:DevIconsEnableFoldersOpenClose = 1

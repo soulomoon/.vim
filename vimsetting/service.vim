@@ -21,6 +21,7 @@ command! ToggleAutorun call AutoRunToggle(1)
 
 command! Dark set background=dark
 command! Light set background=light
+
 "delete trailling blank
 "autocmd BufWritePre * %s/\s\+$//e
 "Credit joshdick
