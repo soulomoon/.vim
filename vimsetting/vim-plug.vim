@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 "language syntax################################################################################
 "Plug 'hdima/python-syntax'
+"Plug 'elzr/vim-json'
 " full function
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
