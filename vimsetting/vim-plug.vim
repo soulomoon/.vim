@@ -5,14 +5,14 @@ call plug#begin('~/.vim/plugged')
 "Plug 'elzr/vim-json'
 " full function
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown'
 "Plug 'joonty/vdebug'
@@ -29,7 +29,7 @@ Plug 'suan/vim-instant-markdown'
 "utility ############################################################
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -37,7 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'heavenshell/vim-pydocstring'
-"Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 "Plug 'tweekmonster/startuptime.vim'
 Plug 'godlygeek/tabular'
 "Plug 'terryma/vim-expand-region'
