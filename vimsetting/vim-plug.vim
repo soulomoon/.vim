@@ -12,7 +12,7 @@ Plug 'tpope/vim-commentary'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown'
 "Plug 'joonty/vdebug'
@@ -27,6 +27,7 @@ Plug 'suan/vim-instant-markdown'
 "Plug 'tweekmonster/django-plus.vim'
 "
 "utility ############################################################
+Plug 'itchyny/vim-haskell-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -78,6 +79,7 @@ Plug 'ryanoasis/vim-devicons'
 "Plug 'chriskempson/base16-vim'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
+Plug 'neovimhaskell/haskell-vim'
 
 
 " Initialize plugin system
@@ -98,6 +100,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let $PYTHONPATH .= getcwd()
+
+" ale
+" disable style lint
+let g:ale_python_pylint_options =  '--disable=C'
 
 " better key bindings for ultisnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-l>"
@@ -213,3 +219,12 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+
+" haskell
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1       
