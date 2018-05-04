@@ -192,6 +192,7 @@ let g:pymode_syntax = 1
 "one
 "let g:one_allow_italics = 1 " I love italic for comments
 "colorscheme one
+set background=dark
 execute "set background=".$BACKGROUND
 colorscheme solarized8
 "let g:onedark_termcolors=256

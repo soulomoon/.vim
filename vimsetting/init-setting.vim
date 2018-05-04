@@ -9,7 +9,7 @@ set linebreak
 "set updatetime=350
 set noshowmode
 set encoding=utf8
-set ts=4 sts=4 sw=4 expandtab
+" set ts=4 sts=4 sw=4 expandtab
 "list completion options
 set wildmenu
 set wildmode=longest:full,full
