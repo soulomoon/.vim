@@ -12,7 +12,7 @@ Plug 'tpope/vim-commentary'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'wlangstroth/vim-racket'
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown'
@@ -28,7 +28,7 @@ Plug 'suan/vim-instant-markdown'
 "Plug 'tweekmonster/django-plus.vim'
 "
 "utility ############################################################
-Plug 'itchyny/vim-haskell-indent'
+" Plug 'itchyny/vim-haskell-indent'
 Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -81,13 +81,31 @@ Plug 'ryanoasis/vim-devicons'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
-
 Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
 
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'roxma/nvim-yarp'
+" Plug 'Shougo/deoplete.nvim'
 
-" Initialize plugin system
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh'
+    \ }
+
 call plug#end()
+
+set signcolumn=yes
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+let g:LanguageClient_serverCommands = {
+  \ 'haskell' : ['hie', '--lsp', '-d', '-l', '~/hie.log']
+  \ }
+
+let g:ale_fixers = { 'javascript': ['eslint'], 'haskell': ['brittany'] }
+let g:ale_haskell_brittany_options = "--write-mode inplace"
+nmap <silent> <A-l> :ALEFix<cr>
 "vimux
 let g:VimuxUseNearest = 0
 
@@ -95,6 +113,7 @@ let g:VimuxUseNearest = 0
 let g:pydocstring_enable_mapping = 0
 nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
+" let g:ycm_cache_omnifunc = 0
 let g:ycm_python_binary_path = 'python'
 "let g:ycm_complete_in_comments = 1
 " let g:ycm_use_ultisnips_completer = 1
@@ -104,10 +123,14 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let $PYTHONPATH .= getcwd()
-
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_semantic_triggers = {'haskell' : ['re!.']}
+" let g:ycm_semantic_triggers = {'haskell' : ['re!\w\.']}
 " ale
 " disable style lint
+let g:airline#extensions#ale#enabled = 1
 let g:ale_python_pylint_options =  '--disable=C'
+let g:ale_completion_enabled = 1
 
 " better key bindings for ultisnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-l>"
@@ -208,6 +231,7 @@ nmap ga <Plug>(EasyAlign)
 autocmd QuickFixCmdPost *grep* cwindow
 
 "Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_key='<C-g>'
 let g:multi_cursor_next_key='<C-g>'
 
@@ -216,14 +240,14 @@ let g:multi_cursor_next_key='<C-g>'
 
 "ryanoasis/vim-devicons####################
 let g:WebDevIconsOS = 'Darwin'
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:DevIconsEnableFolderExtensionPatternMatching = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1 
+"let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:DevIconsEnableFoldersOpenClose = 1
+"let g:webdevicons_enable_nerdtree = 1
+" let g:DevIconsEnableFolderExtensionPatternMatching = 1
+" let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 
 " haskell
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
