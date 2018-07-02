@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'hdima/python-syntax'
 "Plug 'elzr/vim-json'
 " full function
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
@@ -12,7 +12,7 @@ Plug 'tpope/vim-commentary'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'wlangstroth/vim-racket'
 Plug 'plasticboy/vim-markdown'
 Plug 'suan/vim-instant-markdown'
@@ -72,7 +72,7 @@ Plug 'benmills/vimux'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -144,7 +144,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "endfunction
 "call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
 
-let g:airline_theme = "solarized"
+let g:airline_theme = "onedark"
 let g:airline_detect_modified=1
 let g:airline_detect_spell=1
 let g:airline_inactive_collapse=1
@@ -214,12 +214,12 @@ let g:pymode_syntax = 1
 
 "one
 "let g:one_allow_italics = 1 " I love italic for comments
-"colorscheme one
 set background=dark
 execute "set background=".$BACKGROUND
-colorscheme solarized8
+"colorscheme solarized8
+colorscheme onedark
 "let g:onedark_termcolors=256
-"let g:onedark_terminal_italics = 1
+let g:onedark_terminal_italics = 1
 "colorscheme base16-onedark
 " Easy align shortcut ########################################
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -243,7 +243,7 @@ let g:WebDevIconsOS = 'Darwin'
 let g:webdevicons_conceal_nerdtree_brackets = 1 
 "let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " let g:DevIconsEnableFoldersOpenClose = 1
 "let g:webdevicons_enable_nerdtree = 1
 " let g:DevIconsEnableFolderExtensionPatternMatching = 1
