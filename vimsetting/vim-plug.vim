@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'hdima/python-syntax'
 "Plug 'elzr/vim-json'
 " full function
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all'}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --java-completer --js-completer --go-completer'}
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
