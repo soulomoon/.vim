@@ -17,17 +17,17 @@ set splitbelow
 set splitright
 "case
 "set ignorecase
-set smartcase
+" set smartcase
 "line Number
 set number
-set relativenumber
+" set relativenumber
 "story command history
 set history=10000
 "syntax enable
-set nolazyredraw
+" set nolazyredraw
 "set t_Co=256
 "auto reload file
-set autoread
+" set autoread
 
 filetype plugin indent on
 syntax on
@@ -40,7 +40,7 @@ autocmd BufNewFile,BufRead *.conf set syntax=automake
 autocmd BufNewFile,BufRead *.automake set syntax=automake
 autocmd BufNewFile,BufRead *.am set syntax=automake
 autocmd BufNewFile,BufRead *.make set syntax=automake
-autocmd filetype crontab setlocal nobackup nowritebackup
+" autocmd filetype crontab setlocal nobackup nowritebackup
 " enable true color
 set termguicolors
 

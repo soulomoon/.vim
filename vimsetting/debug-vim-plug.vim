@@ -4,6 +4,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 augroup filetype_rust
     autocmd!

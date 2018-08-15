@@ -6,16 +6,16 @@ call plug#begin('~/.vim/plugged')
 " full function
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --java-completer --js-completer --go-completer'}
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'python-mode/python-mode'
+"Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
 Plug 'sheerun/vim-polyglot'
-Plug 'wlangstroth/vim-racket'
-Plug 'plasticboy/vim-markdown'
-Plug 'suan/vim-instant-markdown'
+" Plug 'wlangstroth/vim-racket'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'suan/vim-instant-markdown'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
@@ -29,19 +29,19 @@ Plug 'suan/vim-instant-markdown'
 "
 "utility ############################################################
 " Plug 'itchyny/vim-haskell-indent'
-Plug 'tmhedberg/SimpylFold'
-Plug 'junegunn/vim-easy-align'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
+" Plug 'tmhedberg/SimpylFold'
+" Plug 'junegunn/vim-easy-align'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'heavenshell/vim-pydocstring'
+" Plug 'tpope/vim-fugitive'
+" Plug 'terryma/vim-multiple-cursors'
+"" Plug 'heavenshell/vim-pydocstring'
 Plug 'tpope/vim-abolish'
-"Plug 'tweekmonster/startuptime.vim'
-Plug 'godlygeek/tabular'
+" Plug 'tweekmonster/startuptime.vim'
+" Plug 'godlygeek/tabular'
 "Plug 'terryma/vim-expand-region'
 
 "services ##############################
@@ -59,7 +59,7 @@ Plug 'scrooloose/nerdtree'
 "Plug 'edkolev/tmuxline.vim'
 
 "git##########
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'vim-scripts/gitignore'
 "Plug 'mhinz/vim-signify'
@@ -74,35 +74,60 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'nathanaelkane/vim-indent-guides'
 Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'
 "Plug 'altercation/vim-colors-solarized'
-Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1
-Plug 'lifepillar/vim-solarized8'
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'luochen1990/rainbow'
+"let g:rainbow_active = 1
+" Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
 
 " Plug 'roxma/vim-hug-neovim-rpc'
 " Plug 'roxma/nvim-yarp'
 " Plug 'Shougo/deoplete.nvim'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh'
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh'
+"     \ }
 
 call plug#end()
 
-set signcolumn=yes
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+"
 
-let g:LanguageClient_serverCommands = {
-  \ 'haskell' : ['hie', '--lsp', '-d', '-l', '~/hie.log']
-  \ }
+"let g:rbpt_colorpairs = [
+"    \ ['brown',       'RoyalBlue3'],
+"    \ ['Darkblue',    'SeaGreen3'],
+"    \ ['darkgray',    'DarkOrchid3'],
+"    \ ['darkgreen',   'firebrick3'],
+"    \ ['darkcyan',    'RoyalBlue3'],
+"    \ ['darkred',     'SeaGreen3'],
+"    \ ['darkmagenta', 'DarkOrchid3'],
+"    \ ['brown',       'firebrick3'],
+"    \ ['gray',        'RoyalBlue3'],
+"    \ ['black',       'SeaGreen3'],
+"    \ ['darkmagenta', 'DarkOrchid3'],
+"    \ ['Darkblue',    'firebrick3'],
+"    \ ['darkgreen',   'RoyalBlue3'],
+"    \ ['darkcyan',    'SeaGreen3'],
+"    \ ['darkred',     'DarkOrchid3'],
+"    \ ['red',         'firebrick3'],
+"    \ ]
 
+" set signcolumn=yes
+" filetype plugin on
+" set omnifunc=syntaxcomplete#Complete
+
+" let g:LanguageClient_serverCommands = {
+"   \ 'haskell' : ['hie', '--lsp', '-d', '-l', '~/hie.log']
+"   \ }
 let g:ale_fixers = { 'javascript': ['eslint'], 'haskell': ['brittany'] }
 let g:ale_haskell_brittany_options = "--write-mode inplace"
 nmap <silent> <A-l> :ALEFix<cr>
@@ -110,8 +135,8 @@ nmap <silent> <A-l> :ALEFix<cr>
 let g:VimuxUseNearest = 0
 
 "Plug 'heavenshell/vim-pydocstring'
-let g:pydocstring_enable_mapping = 0
-nmap <silent> <C-m> <Plug>(pydocstring)
+" let g:pydocstring_enable_mapping = 0
+" nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
 " let g:ycm_cache_omnifunc = 0
 let g:ycm_python_binary_path = 'python'
@@ -124,7 +149,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let $PYTHONPATH .= getcwd()
 let g:ycm_min_num_of_chars_for_completion=2
-let g:ycm_semantic_triggers = {'haskell' : ['re!.']}
+" let g:ycm_semantic_triggers = {'haskell' : ['re!.']}
 " let g:ycm_semantic_triggers = {'haskell' : ['re!\w\.']}
 " ale
 " disable style lint
@@ -182,7 +207,7 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 
 "simple fold#######################################################################
-let g:SimpylFold_docstring_preview = 1
+" let g:SimpylFold_docstring_preview = 1
 
 "pymode ############################################################
 "let g:UltiSnipsUsePythonVersion = 3
