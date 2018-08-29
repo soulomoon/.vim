@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'hdima/python-syntax'
 "Plug 'elzr/vim-json'
 " full function
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --java-completer --js-completer --go-completer'}
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --java-completer --js-completer --go-completer'}
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
@@ -19,7 +19,8 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
-"Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 "Plug 'jelera/vim-javascript-syntax'
 "Plug 'moll/vim-node'
 """django
@@ -32,7 +33,7 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'tmhedberg/SimpylFold'
 " Plug 'junegunn/vim-easy-align'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
@@ -55,7 +56,7 @@ Plug 'w0rp/ale'
 "project ##################################o
 "Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 "Plug 'edkolev/tmuxline.vim'
 
 "git##########
@@ -80,20 +81,10 @@ Plug 'joshdick/onedark.vim'
 "Plug 'chriskempson/base16-vim'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'kien/rainbow_parentheses.vim'
-"Plug 'luochen1990/rainbow'
-"let g:rainbow_active = 1
 " Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
-
-" Plug 'roxma/vim-hug-neovim-rpc'
 " Plug 'roxma/nvim-yarp'
 " Plug 'Shougo/deoplete.nvim'
-
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh'
-"     \ }
-
 call plug#end()
 
 au VimEnter * RainbowParenthesesToggle
@@ -124,11 +115,20 @@ au Syntax * RainbowParenthesesLoadBraces
 " set signcolumn=yes
 " filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
+" # supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" let g:LanguageClient_serverCommands = {
-"   \ 'haskell' : ['hie', '--lsp', '-d', '-l', '~/hie.log']
-"   \ }
-let g:ale_fixers = { 'javascript': ['eslint'], 'haskell': ['brittany'] }
+
+let g:ale_python_pylint_options =  '--disable=C'
+let g:ale_completion_enabled = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = { 
+            \'haskell': ['hie'], 
+            \}
+let g:ale_fixers = { 
+            \'javascript': ['eslint'], 
+            \'haskell': ['brittany']
+            \}
 let g:ale_haskell_brittany_options = "--write-mode inplace"
 nmap <silent> <A-l> :ALEFix<cr>
 "vimux
@@ -154,8 +154,6 @@ let g:ycm_min_num_of_chars_for_completion=2
 " ale
 " disable style lint
 let g:airline#extensions#ale#enabled = 1
-let g:ale_python_pylint_options =  '--disable=C'
-let g:ale_completion_enabled = 1
 
 " better key bindings for ultisnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-l>"
@@ -186,7 +184,7 @@ let g:airline#extensions#tagbar#enabled = 1
 autocmd BufDelete * call airline#extensions#tabline#buflist#invalidate()
 
 "tagebar ########################################################################
-"nmap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 "nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
@@ -282,3 +280,36 @@ let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1       
+" tagebar haskell
+let g:tagbar_type_haskell = {
+    \ 'ctagsbin'  : 'hasktags',
+    \ 'ctagsargs' : '-x -c -o-',
+    \ 'kinds'     : [
+        \  'm:modules:0:1',
+        \  'd:data: 0:1',
+        \  'd_gadt: data gadt:0:1',
+        \  't:type names:0:1',
+        \  'nt:new types:0:1',
+        \  'c:classes:0:1',
+        \  'cons:constructors:1:1',
+        \  'c_gadt:constructor gadt:1:1',
+        \  'c_a:constructor accessors:1:1',
+        \  'ft:function types:1:1',
+        \  'fi:function implementations:0:1',
+        \  'o:others:0:1'
+    \ ],
+    \ 'sro'        : '.',
+    \ 'kind2scope' : {
+        \ 'm' : 'module',
+        \ 'c' : 'class',
+        \ 'd' : 'data',
+        \ 't' : 'type'
+    \ },
+    \ 'scope2kind' : {
+        \ 'module' : 'm',
+        \ 'class'  : 'c',
+        \ 'data'   : 'd',
+        \ 'type'   : 't'
+    \ }
+\ }
+
