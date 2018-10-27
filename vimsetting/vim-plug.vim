@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'elzr/vim-json'
 " full function
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --clang-completer --rust-completer --java-completer --js-completer --go-completer'}
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
 "Plug 'davidhalter/jedi-vim'
@@ -19,8 +19,10 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+" Plug 'rizzatti/dash.vim'
+" nmap <silent> <leader>d <Plug>DashSearch
+" Plug 'xolox/vim-easytags'
 "Plug 'jelera/vim-javascript-syntax'
 "Plug 'moll/vim-node'
 """django
@@ -31,7 +33,7 @@ Plug 'xolox/vim-easytags'
 "utility ############################################################
 " Plug 'itchyny/vim-haskell-indent'
 " Plug 'tmhedberg/SimpylFold'
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -56,11 +58,11 @@ Plug 'w0rp/ale'
 "project ##################################o
 "Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 "Plug 'edkolev/tmuxline.vim'
 
 "git##########
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'vim-scripts/gitignore'
 "Plug 'mhinz/vim-signify'
@@ -87,37 +89,20 @@ Plug 'neovimhaskell/haskell-vim'
 " Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 "
-
-"let g:rbpt_colorpairs = [
-"    \ ['brown',       'RoyalBlue3'],
-"    \ ['Darkblue',    'SeaGreen3'],
-"    \ ['darkgray',    'DarkOrchid3'],
-"    \ ['darkgreen',   'firebrick3'],
-"    \ ['darkcyan',    'RoyalBlue3'],
-"    \ ['darkred',     'SeaGreen3'],
-"    \ ['darkmagenta', 'DarkOrchid3'],
-"    \ ['brown',       'firebrick3'],
-"    \ ['gray',        'RoyalBlue3'],
-"    \ ['black',       'SeaGreen3'],
-"    \ ['darkmagenta', 'DarkOrchid3'],
-"    \ ['Darkblue',    'firebrick3'],
-"    \ ['darkgreen',   'RoyalBlue3'],
-"    \ ['darkcyan',    'SeaGreen3'],
-"    \ ['darkred',     'DarkOrchid3'],
-"    \ ['red',         'firebrick3'],
-"    \ ]
-
-" set signcolumn=yes
-" filetype plugin on
+set signcolumn=yes
+filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
 " # supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
-
+let g:ale_haskell_hie_executable = "hie-wrapper"
+let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_save = 0
 
 let g:ale_python_pylint_options =  '--disable=C'
 let g:ale_completion_enabled = 1
@@ -281,35 +266,35 @@ let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
 let g:haskell_backpack = 1       
 " tagebar haskell
-let g:tagbar_type_haskell = {
-    \ 'ctagsbin'  : 'hasktags',
-    \ 'ctagsargs' : '-x -c -o-',
-    \ 'kinds'     : [
-        \  'm:modules:0:1',
-        \  'd:data: 0:1',
-        \  'd_gadt: data gadt:0:1',
-        \  't:type names:0:1',
-        \  'nt:new types:0:1',
-        \  'c:classes:0:1',
-        \  'cons:constructors:1:1',
-        \  'c_gadt:constructor gadt:1:1',
-        \  'c_a:constructor accessors:1:1',
-        \  'ft:function types:1:1',
-        \  'fi:function implementations:0:1',
-        \  'o:others:0:1'
-    \ ],
-    \ 'sro'        : '.',
-    \ 'kind2scope' : {
-        \ 'm' : 'module',
-        \ 'c' : 'class',
-        \ 'd' : 'data',
-        \ 't' : 'type'
-    \ },
-    \ 'scope2kind' : {
-        \ 'module' : 'm',
-        \ 'class'  : 'c',
-        \ 'data'   : 'd',
-        \ 'type'   : 't'
-    \ }
-\ }
+" let g:tagbar_type_haskell = {
+"     \ 'ctagsbin'  : 'hasktags',
+"     \ 'ctagsargs' : '-x -c -o-',
+"     \ 'kinds'     : [
+"         \  'm:modules:0:1',
+"         \  'd:data: 0:1',
+"         \  'd_gadt: data gadt:0:1',
+"         \  't:type names:0:1',
+"         \  'nt:new types:0:1',
+"         \  'c:classes:0:1',
+"         \  'cons:constructors:1:1',
+"         \  'c_gadt:constructor gadt:1:1',
+"         \  'c_a:constructor accessors:1:1',
+"         \  'ft:function types:1:1',
+"         \  'fi:function implementations:0:1',
+"         \  'o:others:0:1'
+"     \ ],
+"     \ 'sro'        : '.',
+"     \ 'kind2scope' : {
+"         \ 'm' : 'module',
+"         \ 'c' : 'class',
+"         \ 'd' : 'data',
+"         \ 't' : 'type'
+"     \ },
+"     \ 'scope2kind' : {
+"         \ 'module' : 'm',
+"         \ 'class'  : 'c',
+"         \ 'data'   : 'd',
+"         \ 'type'   : 't'
+"     \ }
+" \ }
 

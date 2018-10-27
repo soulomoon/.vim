@@ -1,5 +1,5 @@
 "set shell=bash\ -i
-set nocompatible
+set nocompatible 
 set showcmd
 set hlsearch
 set cmdheight=1
@@ -57,3 +57,6 @@ if (has("nvim"))
     let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python3'
 endif
 set foldmethod=syntax
+
+
+set signcolumn=yes
