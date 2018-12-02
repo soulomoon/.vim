@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
 Plug 'sheerun/vim-polyglot'
+" Plug 'vim-scripts/AutoComplPop'
 " Plug 'wlangstroth/vim-racket'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'suan/vim-instant-markdown'
@@ -83,7 +84,7 @@ Plug 'joshdick/onedark.vim'
 "Plug 'chriskempson/base16-vim'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'kien/rainbow_parentheses.vim'
-" Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'roxma/nvim-yarp'
 " Plug 'Shougo/deoplete.nvim'
@@ -103,6 +104,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:ale_haskell_hie_executable = "hie-wrapper"
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_save = 0
+
+let g:ale_completion_delay = 100
+let g:ale_completion_max_suggestions = 50
 
 let g:ale_python_pylint_options =  '--disable=C'
 let g:ale_completion_enabled = 1
@@ -124,16 +128,16 @@ let g:VimuxUseNearest = 0
 " nmap <silent> <C-m> <Plug>(pydocstring)
 "YCM
 " let g:ycm_cache_omnifunc = 0
-let g:ycm_python_binary_path = 'python'
+" let g:ycm_python_binary_path = 'python'
 "let g:ycm_complete_in_comments = 1
 " let g:ycm_use_ultisnips_completer = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " let g:ycm_add_preview_to_completeopt = 1
 " let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_confirm_extra_conf = 0
-let $PYTHONPATH .= getcwd()
-let g:ycm_min_num_of_chars_for_completion=2
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_confirm_extra_conf = 0
+" let $PYTHONPATH .= getcwd()
+" let g:ycm_min_num_of_chars_for_completion=2
 " let g:ycm_semantic_triggers = {'haskell' : ['re!.']}
 " let g:ycm_semantic_triggers = {'haskell' : ['re!\w\.']}
 " ale

@@ -37,6 +37,8 @@ syntax on
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "javascript set 2 as indent
 autocmd Filetype javascript.jsx.html.rkt setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType rkt setl commentstring=;\ %s
+
 
 autocmd BufNewFile,BufRead *.conf set syntax=automake
 autocmd BufNewFile,BufRead *.automake set syntax=automake
