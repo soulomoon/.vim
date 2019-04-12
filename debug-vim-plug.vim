@@ -1,27 +1,24 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
-" Plug 'scrooloose/nerdtree'
-" Plug 'w0rp/ale'
-Plug 'jiangmiao/auto-pairs'
-" Plug 'neovimhaskell/haskell-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
+let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
+
 call plug#end()
-
-" Always draw sign column. Prevent buffer moving when adding/deleting sign.
-"set signcolumn=yes
-"filetype plugin on
-"set omnifunc=syntaxcomplete#Complete
-
-"let g:SuperTabDefaultCompletionType = "<c-n>"
-"let g:ale_haskell_hie_executable = "hie-wrapper"
-
-
-
-
-"""nerdtree ####################################################################################
-""let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-""map <C-n> :NERDTreeToggle<CR>
-""autocmd StdinReadPre * let s:std_in=1
-""autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-""autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-""let g:NERDTreeChDirMode = 0
-""let g:NERDTreeShowIgnoredStatus = 1
+colorscheme onedark

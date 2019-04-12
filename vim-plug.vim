@@ -41,7 +41,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-fugitive'
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 "" Plug 'heavenshell/vim-pydocstring'
 Plug 'tpope/vim-abolish'
 " Plug 'tweekmonster/startuptime.vim'
@@ -59,7 +59,7 @@ Plug 'w0rp/ale'
 "project ##################################o
 "Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Plug 'edkolev/tmuxline.vim'
 
 "git##########
@@ -79,13 +79,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
 "Plug 'rakr/vim-one'
 " Plug 'ryanoasis/vim-devicons'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'flazz/vim-colorschemes'
 "Plug 'chriskempson/base16-vim'
 "Plug 'altercation/vim-colors-solarized'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
+
 " Plug 'roxma/nvim-yarp'
 " Plug 'Shougo/deoplete.nvim'
 call plug#end()
@@ -100,7 +101,7 @@ set signcolumn=yes
 filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
 " # supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:ale_haskell_hie_executable = "hie-wrapper"
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_save = 0
@@ -109,6 +110,7 @@ let g:ale_completion_delay = 100
 let g:ale_completion_max_suggestions = 50
 
 let g:ale_python_pylint_options =  '--disable=C'
+
 let g:ale_completion_enabled = 1
 let g:ale_linters_explicit = 1
 let g:ale_linters = { 
@@ -120,6 +122,7 @@ let g:ale_fixers = {
             \}
 let g:ale_haskell_brittany_options = "--write-mode inplace"
 nmap <silent> <A-l> :ALEFix<cr>
+nmap <silent> <A-b> :ALEGoToDefinition<cr>
 "vimux
 let g:VimuxUseNearest = 0
 
@@ -177,7 +180,7 @@ nmap <F8> :TagbarToggle<CR>
 
 "nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -206,7 +209,7 @@ let g:pymode_run_bind = '<leader>r'
 let g:pymode_breakpoint = 1
 ""rope
 let g:pymode_rope = 1
-let g:pymode_rope_goto_definition_cmd = 'e'
+" let g:pymode_rope_goto_definition_cmd = 'e'
 let g:pymode_rope_completion = 0
 let g:pymode_options_max_line_length = 79
 "
@@ -243,9 +246,9 @@ nmap ga <Plug>(EasyAlign)
 autocmd QuickFixCmdPost *grep* cwindow
 
 "Plug 'terryma/vim-multiple-cursors'
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_key='<C-g>'
-let g:multi_cursor_next_key='<C-g>'
+" let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_start_key='<C-g>'
+" let g:multi_cursor_next_key='<C-g>'
 
 "airblade/vim-gitgutter
 "let g:gitgutter_highlight_lines = 1
