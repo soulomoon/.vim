@@ -32,3 +32,17 @@ map <Leader>vz :call VimuxZoomRunner()<CR>
 
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" nmap <silent> <A-l> :ALEFix<cr>
+" nmap <silent> <A-b> :ALEGoToDefinition<cr>
+
+"tagebar ########################################################################
+nmap <F8> :TagbarToggle<CR>
+
+" Easy align shortcut ########################################
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+map <C-t> :NERDTreeToggle<CR>
