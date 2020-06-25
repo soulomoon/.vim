@@ -1,6 +1,6 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "language syntax################################################################################
 "Plug 'hdima/python-syntax'
 "Plug 'elzr/vim-json'
@@ -8,6 +8,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-syntax-extra'
+Plug 'rizzatti/dash.vim'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
@@ -37,7 +39,7 @@ Plug 'chrisbra/unicode.vim'
 " Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'tpope/vim-surround'
@@ -52,7 +54,7 @@ Plug 'tpope/vim-abolish'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 "Plug 'vim-syntastic/syntastic'
 "Plug 'skywind3000/asyncrun.vim'
 
@@ -102,26 +104,26 @@ filetype plugin on
 " # supertab
 " let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" let g:ale_haskell_hie_executable = "hie-wrapper"
-" let g:ale_lint_on_text_changed = 1
+let g:ale_haskell_hie_executable = "hie-wrapper"
+let g:ale_lint_on_text_changed = 1
 " let g:ale_lint_on_save = 0
 
-" let g:ale_completion_delay = 100
-" let g:ale_completion_max_suggestions = 50
+let g:ale_completion_delay = 100
+let g:ale_completion_max_suggestions = 50
 " let g:ale_python_pylint_options =  '--disable=C'
 
-" let g:ale_completion_enabled = 1
-" let g:ale_linters_explicit = 1
-" let g:ale_linters = { 
-"             \'haskell': ['hie'], 
-"             \}
-" let g:ale_fixers = { 
-"             \'javascript': ['eslint'], 
-"             \'haskell': ['brittany']
-"             \}
-" let g:ale_haskell_brittany_options = "--write-mode inplace"
+let g:ale_completion_enabled = 1
+let g:ale_linters_explicit = 1
+let g:ale_linters = { 
+            \'haskell': ['hie'], 
+            \}
+let g:ale_fixers = { 
+            \'javascript': ['eslint'], 
+            \'haskell': ['brittany']
+            \}
+let g:ale_haskell_brittany_options = "--write-mode inplace"
 " " disable style lint
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 "vimux
 let g:VimuxUseNearest = 0
