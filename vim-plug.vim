@@ -101,8 +101,8 @@ au Syntax * RainbowParenthesesLoadBraces
 set signcolumn=yes
 filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
-" # supertab
-" let g:SuperTabDefaultCompletionType = "<c-n>"
+" # supertab to cycle forward
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 let g:ale_haskell_hie_executable = "hie-wrapper"
 let g:ale_lint_on_text_changed = 1
