@@ -19,7 +19,7 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "#####################################
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
+" Run last command executed by VimuxRunCommand9
 map <Leader>vl :VimuxRunLastCommand<CR>
 " Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
@@ -49,5 +49,8 @@ map <C-t> :NERDTreeToggle<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+inoremap jk <esc>
+inoremap <esc> <nop>
 
 

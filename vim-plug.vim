@@ -152,9 +152,11 @@ let g:VimuxUseNearest = 0
 
 "nerdtree ####################################################################################
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+augroup NERDTree_group
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+augroup END
 let g:NERDTreeChDirMode = 0
 let g:NERDTreeShowIgnoredStatus = 1
 

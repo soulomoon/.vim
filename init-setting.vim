@@ -5,14 +5,10 @@ set nocompatible
 set showcmd
 set hlsearch
 set cmdheight=1
-"soft wrap
-"set nowrap
 set linebreak
-"set updatetime=350
 set noshowmode
 set encoding=utf8
 set ts=4 sts=4 sw=4 expandtab
-" set ts=2 sts=2 sw=2 expandtab
 "list completion options
 set wildmenu
 set wildmode=longest:full,full
@@ -35,17 +31,15 @@ set history=10000
 
 filetype plugin indent on
 "On pressing tab, insert 4 spaces
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-"javascript set 2 as indent
-autocmd Filetype javascript.jsx.html.rkt setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType rkt setl commentstring=;\ %s
-autocmd FileType cl setl commentstring=;\ %s
 
-" autocmd BufNewFile,BufRead *.conf set syntax=automake
-" autocmd BufNewFile,BufRead *.automake set syntax=automake
-" autocmd BufNewFile,BufRead *.am set syntax=automake
-" autocmd BufNewFile,BufRead *.make set syntax=automake
-" autocmd filetype crontab setlocal nobackup nowritebackup
+augroup file_setting
+    autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    "javascript set 2 as indent
+    autocmd Filetype javascript.jsx.html.rkt setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType rkt setl commentstring=;\ %s
+    autocmd FileType cl setl commentstring=;\ %s
+augroup END
+
 " enable true color
 set termguicolors
 
