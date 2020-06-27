@@ -98,8 +98,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 "
-set signcolumn=yes
-filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
 " # supertab to cycle forward
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -174,12 +172,11 @@ let g:NERDTreeShowIgnoredStatus = 1
 
 "one
 "let g:one_allow_italics = 1 " I love italic for comments
-set background=dark
-execute "set background=".$BACKGROUND
+" set background=dark
 "colorscheme solarized8
 colorscheme onedark
+" let g:onedark_terminal_italics = 1
 "let g:onedark_termcolors=256
-let g:onedark_terminal_italics = 1
 "colorscheme base16-onedark
 
 " fugitive

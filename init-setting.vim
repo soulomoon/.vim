@@ -1,4 +1,6 @@
 "set shell=bash\ -i
+let mapleader = ","
+syntax on
 set nocompatible 
 set showcmd
 set hlsearch
@@ -22,7 +24,7 @@ set splitright
 " set smartcase
 "line Number
 set number
-set relativenumber
+" set relativenumber
 "story command history
 set history=10000
 "syntax enable
@@ -32,7 +34,6 @@ set history=10000
 " set autoread
 
 filetype plugin indent on
-syntax on
 "On pressing tab, insert 4 spaces
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "javascript set 2 as indent
