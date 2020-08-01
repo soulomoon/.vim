@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'rizzatti/dash.vim'
-"Plug 'davidhalter/jedi-vim'
+Plug 'whonore/Coqtail'
 "Plug 'pangloss/vim-javascript'
 "Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
@@ -102,7 +102,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " # supertab to cycle forward
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-let g:ale_haskell_hie_executable = "hie-wrapper"
+let g:ale_haskell_hie_executable = "haskell-language-server-wrapper"
 let g:ale_lint_on_text_changed = 1
 " let g:ale_lint_on_save = 0
 
