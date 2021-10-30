@@ -27,13 +27,6 @@ Plug 'chrisbra/unicode.vim'
 " Plug 'rizzatti/dash.vim'
 " nmap <silent> <leader>d <Plug>DashSearch
 " Plug 'xolox/vim-easytags'
-"Plug 'jelera/vim-javascript-syntax'
-"Plug 'moll/vim-node'
-"""django
-"Plug 'jmcomets/vim-pony'
-"Plug 'vim-scripts/django.vim'
-"Plug 'tweekmonster/django-plus.vim'
-"
 "utility ############################################################
 " Plug 'itchyny/vim-haskell-indent'
 " Plug 'tmhedberg/SimpylFold'
@@ -62,7 +55,7 @@ Plug 'w0rp/ale'
 "Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 " Plug 'majutsushi/tagbar'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 "git##########
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -77,7 +70,7 @@ Plug 'benmills/vimux'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'nathanaelkane/vim-indent-guides'
-Plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 "Plug 'rakr/vim-one'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -158,7 +151,7 @@ augroup NERDTree_group
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 augroup END
 let g:NERDTreeChDirMode = 0
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 
 "vim-nerdtree-syntax-highlight'###########
 "let g:NERDTreeLimitedSyntax = 1
