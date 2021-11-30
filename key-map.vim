@@ -14,22 +14,6 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "nnoremap <esc> :noh<return><esc>
 "nnoremap <esc>^[ <esc>^[
 
-"#####################################
-"#############VIMUX###################
-"#####################################
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand9
-map <Leader>vl :VimuxRunLastCommand<CR>
-" Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
-" Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-map <Leader>vz :call VimuxZoomRunner()<CR>
-
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
@@ -48,9 +32,23 @@ nmap ga <Plug>(EasyAlign)
 map <C-t> :NERDTreeToggle<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>eh :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" remap essc
 inoremap jk <esc>
 inoremap <esc> <nop>
 
 
+" fzf
+nmap <C-f> :BLines<CR>
+nmap <C-p> :Commands<CR>
+nmap <S-F> :Rg<Space>
+nmap <C-m> :Maps<CR>
+
+" which key
+" let g:mapleader = ','
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>

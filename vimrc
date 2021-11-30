@@ -1,7 +1,8 @@
 runtime init-setting.vim
-" runtime service.vim
 runtime key-map.vim
 runtime vim-plug.vim
+"
+" runtime service.vim
 " runtime fzf.vim
 " runtime debug-vim-plug.vim
 " runtime coc.vim
@@ -39,3 +40,4 @@ runtime vim-plug.vim
 "   endif
 " endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
+"  

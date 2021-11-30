@@ -15,6 +15,16 @@ set wildmode=longest:full,full
 set completeopt=menu,menuone,preview,noselect,noinsert
 set splitbelow
 set splitright
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+:autocmd InsertEnter * set cul
+:autocmd InsertLeave * set nocul
 "case
 "set ignorecase
 " set smartcase
@@ -25,7 +35,6 @@ set number
 set history=10000
 "syntax enable
 " set nolazyredraw
-"set t_Co=256
 "auto reload file
 " set autoread
 
@@ -57,3 +66,6 @@ set foldmethod=syntax
 
 
 set signcolumn=yes
+set guifont=JetBrainsMonoMedium\ Nerd\ Font:h12
+" remove scrollbars
+set guioptions=

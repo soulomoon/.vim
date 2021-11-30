@@ -5,22 +5,18 @@ call plug#begin('~/.vim/plugged')
 "Plug 'hdima/python-syntax'
 "Plug 'elzr/vim-json'
 " full function
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"Plug 'python-mode/python-mode'
 Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'rizzatti/dash.vim'
 Plug 'whonore/Coqtail'
+Plug 'liuchengxu/vim-which-key'
+Plug 'jceb/vim-orgmode'
 "Plug 'pangloss/vim-javascript'
-"Plug 'ternjs/tern_for_vim'
 "Plug 'digitaltoad/vim-pug'
 " Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/unicode.vim'
 " Plug 'vim-scripts/AutoComplPop'
-" Plug 'wlangstroth/vim-racket'
-" Plug 'plasticboy/vim-markdown'
 " Plug 'suan/vim-instant-markdown'
-"Plug 'joonty/vdebug'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'mxw/vim-jsx'
 " Plug 'xolox/vim-misc'
@@ -28,7 +24,6 @@ Plug 'chrisbra/unicode.vim'
 " nmap <silent> <leader>d <Plug>DashSearch
 " Plug 'xolox/vim-easytags'
 "utility ############################################################
-" Plug 'itchyny/vim-haskell-indent'
 " Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/vim-easy-align'
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -64,7 +59,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "tmux
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'benmills/vimux'
 
 "themes######################################################################
 Plug 'vim-airline/vim-airline'
@@ -80,10 +74,13 @@ Plug 'joshdick/onedark.vim', { 'branch': 'main' }
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'lifepillar/vim-solarized8'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'LnL7/vim-nix'
 
 " Plug 'roxma/nvim-yarp'
 " Plug 'Shougo/deoplete.nvim'
 call plug#end()
+
+
 
 
 au VimEnter * RainbowParenthesesToggle
@@ -116,8 +113,6 @@ let g:ale_haskell_brittany_options = "--write-mode inplace"
 " " disable style lint
 let g:airline#extensions#ale#enabled = 1
 
-"vimux
-let g:VimuxUseNearest = 0
 
 "airline configuration#######################################################
 "human readeable linesnumber
