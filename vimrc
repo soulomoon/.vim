@@ -1,6 +1,7 @@
 runtime init-setting.vim
 runtime key-map.vim
 runtime vim-plug.vim
+runtime plug-config.vim
 "
 " runtime service.vim
 " runtime fzf.vim
