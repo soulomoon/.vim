@@ -1,8 +1,8 @@
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 "
 " set omnifunc=syntaxcomplete#Complete
 " # supertab to cycle forward
@@ -97,11 +97,11 @@ colorscheme onedark
 "let g:gitgutter_highlight_lines = 1
 
 "ryanoasis/vim-devicons####################
-let g:WebDevIconsOS = 'Darwin'
-let g:webdevicons_conceal_nerdtree_brackets = 1 
+" let g:WebDevIconsOS = 'Darwin'
+" let g:webdevicons_conceal_nerdtree_brackets = 1 
 "let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 " let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " let g:DevIconsEnableFoldersOpenClose = 1
 "let g:webdevicons_enable_nerdtree = 1
 " let g:DevIconsEnableFolderExtensionPatternMatching = 1
